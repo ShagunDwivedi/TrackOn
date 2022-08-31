@@ -1,3 +1,6 @@
+# _Quantified Self Tracker App_
+The project is aimed at creating an app that allows multiple users to create trackers to track their routine activities, keeps logs of their activities, and lets them see their progress via trendlines.
+
 # Local Setup
 - Clone the project
 - Run `setup.sh`
