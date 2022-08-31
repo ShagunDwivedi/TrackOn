@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<style>
+body{
+  background-image: url("{{ url_for('static', filename='minimalism1.gif') }}");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.trkname{
+    display: block;
+    padding-inline-start: 40px;
+    background-color: #ffbbb1;
+
+    overflow: hidden;
+    margin-top: 0px;
+    color: white;
+}
+a:link {
+  color: #653187;
+}
+a:visited {
+  color: #653187;
+}
+a:hover {
+  color: #FFDAC1;
+}
+a:active {
+  color: #653187;
+}
+ul {
+  list-style-type: none;
+  margin: 5px;
+  padding: 8px;
+  background-color: #FFDAC1;
+  overflow: hidden;
+  color: black;
+  width: 60%
+}
+
+li {
+  float: left;
+  display: block;
+  border-right: 1px solid black;
+}
+
+li a{
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  color: white;
+}
+.btn{
+  width: 10%;
+  background-color: #653187;
+  cursor: pointer;
+  padding: 10px 8px;
+  border: none;
+  color: white;
+  margin-left: 5px;
+}
+.btn:hover{
+  background-color: #FFDAC1;
+  color: #653187;
+}
+fieldset{
+  display: block;
+  background-color: #ffbbb1;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border-style: none;
+}
+
+</style>
+<title>Log Activity</title>
+</head>
+<body>
+	<div class="trkname">
+   		<h1><a href="/">TrackOn</a> <a href="/" style="float:right; font-size: 16px; margin-right: 8px; margin-top: 7px">LogOut</a></h1>
+	</div>
+	<br><br><br>
+	<div>
+		<fieldset>
+			<h4>Update Log</h4>
+			<form action="/{{ userid }}/{{ trackid }}/{{ timestamp }}/updatelog" method="post">
+
+			{% if track.trk_type==1 %}
+				<! –– tracker name ––>
+				<label for="value">Enter Value:</label><br>
+					<input type="text" id="value" name="value" value={{ prevvalue }}><br><br>
+
+			{% elif track.trk_type==2 %}
+				<label> Enter Value:</label></br>
+  					<input type="radio" id="true" name="value" value="Yes" {% if prevvalue=="Yes" %}checked="checked"{% endif %}>
+  				<label for="Yes">Yes</label><br>
+  					<input type="radio" id="false" name="value" value="No" {% if prevvalue=="No" %}checked="checked"{% endif %}>
+  				<label for="No">No</label><br>
+
+			{% elif track.trk_type==4 %}
+				<label for="time">Select Time Duration (in hh:mm):</label><br>
+  					<input type="time" id="value" name="value" value={{ prevvalue }}><br>
+
+			<! –– tracker description ––>
+			{% elif track.trk_type==3 %}
+				<! –– tracker type ––>
+				<label for="value">Enter Value:</label><br>
+				<select id="value" name="value">
+				{% for x in values %}
+  					<option value="{{ x.value }}" {% if prevvalue==x.value %} selected="selected" {% endif %}>{{ x.value }}</option>
+				{% endfor %}
+				</select>
+				<br><br>
+			{% endif %}
+			<! –– option(for multi-valued tracker) ––>
+			<label for="settings">Note:</label><br>
+				<textarea name="message" rows="2" cols="30">{{ prevnote }}
+				</textarea>
+			<br>
+
+			<input class="btn" type="submit" value="Update"><br><br>
+		</form>
+			<br><a href="/{{ userid }}/{{ trackid }}"> Back to Logs</a>
+		</fieldset>
+	</div>
+</body>
+</html>

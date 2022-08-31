@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+<style>
+body{
+  background-image: url("{{ url_for('static', filename='minimalism1.gif') }}");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.trkname{
+    display: block;
+    padding-inline-start: 40px;
+    background-color: #ffbbb1;
+
+    overflow: hidden;
+    margin-top: 0px;
+    color: white;
+}
+a:link {
+  color: #653187;
+}
+a:visited {
+  color: #653187;
+}
+a:hover {
+  color: #FFDAC1;
+}
+a:active {
+  color: #653187;
+}
+ul {
+  list-style-type: none;
+  margin: 5px;
+  padding: 8px;
+  background-color: #FFDAC1;
+  overflow: hidden;
+  color: black;
+  width: 60%
+}
+
+li {
+  float: left;
+  display: block;
+  border-right: 1px solid black;
+  
+}
+
+li a{
+  display: block;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 14px 16px;
+}
+
+/* Change the link color to white on hover */
+li a:hover {
+  color: white;
+}
+.btn{
+  width: 10%;
+  background-color: #653187;
+  cursor: pointer;
+  padding: 10px 8px;
+  border: none;
+  color: white;
+  margin-left: 5px;
+}
+.btn:hover{
+  background-color: #ffbbb1;
+  color: #653187;
+}
+
+</style>
+	<title>Dashboard</title>
+</head>
+<body>
+	<div class="trkname">
+   		<h1><a href="/">TrackOn</a> <a href="/" style="float:right; font-size: 16px; margin-right: 8px; margin-top: 7px">LogOut</a></h1>
+	</div>
+	<h1 style="margin-left: 5px">Welcome {{ uname }}!</h1>
+	<h3 style="margin-left: 5px">Your Trackers</h3>
+	<form action="/{{ userid }}/addtracker" method="get">
+		<input class="btn" type="submit" value="Add Tracker">
+   	</form><br>
+	<br>
+	{% if trackerlist | length !=0 %}
+		<ul style="color:white; background-color: #ffbbb1">
+			<li>  &emsp;Tracker Name  &emsp;</li>
+			<li>  &emsp;Last Updated On  &emsp;<li>
+			<li>  &emsp;&emsp;Details  &emsp;</li>
+			<li style="float:right; border-right: none">&emsp;&emsp;Actions&emsp;</li>
+		</ul>
+
+		{% for tracker in trackerlist %}
+			{% if tracker in logdic %}
+				<br>
+				<ul>
+					<li><a href="/{{ userid }}/{{ tracker.trk_id }}">{{ tracker.trk_name }}&emsp;</a></li>
+					<li><a href="/{{ userid }}/{{ tracker.trk_id }}">{{ logdic[tracker][0].time }}</a><li>
+					<li><a href="/{{ userid }}/{{ tracker.trk_id }}">{{ logdic[tracker][0].note }}</a></li>
+					<div style="float:right;">
+					<li><a href="/{{userid}}/{{ tracker.trk_id }}/update">Update Tracker</a></li>
+					<li style="float:right; border-right: none"><a href="/{{userid}}/{{ tracker.trk_id }}/delete">Delete Tracker</a></li>
+					</div>
+				</ul>
+				<br>
+			{% else %}
+				<br>
+				<ul>
+					<li><a href="/{{ userid }}/{{ tracker.trk_id }}">{{ tracker.trk_name }}&emsp;</a></li>
+					<li><a href="/{{ userid }}/{{ tracker.trk_id }}"> No Entry Yet </a><li>
+					<li><a href="/{{ userid }}/{{ tracker.trk_id }}">No Entry Yet</a></li>
+					<div style="float:right;">
+					<li><a href="/{{userid}}/{{ tracker.trk_id }}/update">Update Tracker</a></li>
+					<li style="float:right; border-right: none"><a href="/{{userid}}/{{ tracker.trk_id }}/delete">Delete Tracker</a></li>
+					</div>
+				</ul>
+				<br>
+			{% endif %}
+		{% endfor%}
+	{% else %}
+	<p style="margin-left: 5px">No Trackers Yet.</p>
+	{% endif %}
+	<br><br><br><br>
+</body>
+</html>

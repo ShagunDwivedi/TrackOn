@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body{
+  background-image: url(static/login.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+fieldset{
+  display: block;  
+  background-color:#653187;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: white;
+  border-style: none;
+}
+
+.btn{
+  width: 20%;
+  background-color: white;
+  cursor: pointer;
+  padding: 10px 16px;
+  border: none;
+}
+.btn:hover{
+  background-color: #ffbbb1;
+  color: white;
+}
+.trkname{
+    display: block;
+    padding-inline-start: 40px;
+    background-color: #653187;
+    width=100%;
+    overflow: hidden;
+    margin-top: 0px;
+    color: white;
+}
+a:link {
+  color: white;
+}
+a:visited {
+  color: white;
+}
+a:hover {
+  color: #ffbbb1;
+}
+a:active {
+  color: white;
+}
+</style>
+
+	<title>SignUp</title>
+</head>
+<body class="bg">
+	<div class="trkname">
+		<h1><a href="/">TrackOn</a></h1>
+	</div>
+	<br><br><br>
+	<form action="/signup" method="post">
+		<fieldset>
+  			<h4>Enter Details</h4>
+  			<label for="fname">Enter Your Name</label><br>
+  				<input type="text" id="fname" name="fname"><br><br>
+  			<label for="username">{{ err }}</label><br>
+  				<input type="text" id="uname" name="uname">
+  			<br><br>
+  			<input class="btn" type="submit" value="Sign Up"><br><br>
+ 		</fieldset>
+	</form>
+
+</body>
+</html>

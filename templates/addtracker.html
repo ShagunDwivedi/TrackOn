@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+<style>
+body{
+  background-image: url("{{ url_for('static', filename='minimalism1.gif') }}");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.trkname{
+    display: block;
+    padding-inline-start: 40px;
+    background-color: #ffbbb1;
+
+    overflow: hidden;
+    margin-top: 0px;
+    color: white;
+}
+a:link {
+  color: #653187;
+}
+a:visited {
+  color: #653187;
+}
+a:hover {
+  color: #FFDAC1;
+}
+a:active {
+  color: #653187;
+}
+ul {
+  list-style-type: none;
+  margin: 5px;
+  padding: 8px;
+  background-color: #FFDAC1;
+  overflow: hidden;
+  color: black;
+  width: 60%
+}
+
+li {
+  float: left;
+  display: block;
+  border-right: 1px solid black;
+}
+
+li a{
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  color: white;
+}
+.btn{
+  width: 10%;
+  background-color: #653187;
+  cursor: pointer;
+  padding: 10px 8px;
+  border: none;
+  color: white;
+  margin-left: 5px;
+}
+.btn:hover{
+  background-color: #FFDAC1;
+  color: #653187;
+}
+fieldset{
+  display: block;
+  background-color: #ffbbb1;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border-style: none;
+}
+
+</style>
+<title>New Tracker</title>
+</head>
+<body>
+	<div class="trkname">
+   		<h1><a href="/">TrackOn</a> <a href="/" style="float:right; font-size: 16px; margin-right: 8px; margin-top: 7px">LogOut</a></h1>
+	</div>
+	<br><br><br>
+	<div>
+		<fieldset>
+		<h4>Enter New Tracker Details</h4>
+		<form action="/{{ userid }}/addtracker" method="post">
+			<! –– tracker name ––>
+			<label for="trak_name">Enter Tracker Name:</label><br>
+				<input type="text" id="trakname" name="trakname"><br><br>
+			<! –– tracker description ––>
+			<label for="trak_desc">Enter Tracker Description:</label><br>
+				<input type="text" id="trakdesc" name="trakdesc"><br><br>
+			<! –– tracker type ––>
+			<label for="trak_type">Tracker Type:</label><br>
+				<select id="trak_type" name="trak_type">
+  					<option value="1">Numeric</option>
+  					<option value="2">Boolean</option>
+  					<option value="3">Multiple Choice</option>
+  					<option value="4">Time Duration</option>
+				</select>
+			<br><br>
+			<! –– option(for multi-valued tracker) ––>
+			<label for="settings">If Multiple-Choice Tracker, Enter values separated by commas(,)</label><br>
+				<textarea name="settings" rows="2" cols="30"></textarea><br>
+
+			<br>
+		<input class="btn" type="submit" value="Create"><br><br>
+		</form>
+
+		<br><a href="/{{ userid }}/dashboard"> Back to Dashboard</a>
+		</fieldset>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
