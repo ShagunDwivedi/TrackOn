@@ -1,11 +1,201 @@
 _type: export
 __export_format: 4
-__export_date: 2022-09-02T14:38:03.301Z
+__export_date: 2022-09-03T13:28:38.629Z
 __export_source: insomnia.desktop.app:v2022.5.1
 resources:
+  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f563a58cc8
+    parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
+    modified: 1662211590644
+    created: 1662129492091
+    url: "{{ base_url }}/api/{{ username }}/{{ tracker_id }}"
+    name: /api/{username}/{tracker_id}
+    description: ""
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "name": "string",
+          "description": "string",
+          "type": "string",
+          "settings": [
+            "string"
+          ]
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_3093f1f599e048518536d59d3a7e4a2b
+    authentication:
+      type: bearer
+      token: "{{bearerToken}}"
+      prefix: ""
+    metaSortKey: 300
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_cce78cfa58be4a6c8486c38c4b8884f5
+    parentId: null
+    modified: 1662039501961
+    created: 1662039501961
+    name: openapi.yaml
+    description: ""
+    scope: design
+    _type: workspace
+  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f521a21431
+    parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
+    modified: 1662129591900
+    created: 1662129492095
+    url: "{{ base_url }}/api/{{ username }}/{{ tracker_id }}"
+    name: /api/{username}/{tracker_id}
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{bearerToken}}"
+      prefix: ""
+    metaSortKey: 400
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f53522cb70
+    parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
+    modified: 1662129591900
+    created: 1662129492102
+    url: "{{ base_url }}/api/{{ username }}/{{ tracker_id }}"
+    name: /api/{username}/{tracker_id}
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{bearerToken}}"
+      prefix: ""
+    metaSortKey: 500
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f59c92d631
+    parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
+    modified: 1662211597823
+    created: 1662129492106
+    url: "{{ base_url }}/api/{{ username }}/trackers"
+    name: /api/{username}/trackers
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "name": "string",
+          "description": "string",
+          "type": "string",
+          "settings": [
+            "string"
+          ]
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_2e2b23d9f4b54108b7a6f9017d5e7fca
+    authentication:
+      type: bearer
+      token: "{{bearerToken}}"
+      prefix: ""
+    metaSortKey: 600
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f5bf9ef44b
+    parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
+    modified: 1662129625395
+    created: 1662129492111
+    url: "{{ base_url }}/api/{{ username }}/trackers"
+    name: /api/{username}/trackers
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - id: pair_fa571ec0ae624916ba434d78541631b7
+        name: ""
+        value: ""
+        description: ""
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{bearerToken}}"
+      prefix: ""
+    metaSortKey: 700
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f558aec441
+    parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
+    modified: 1662129591900
+    created: 1662043576429
+    url: "{{ base_url }}/api/login"
+    name: /api/login
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "email": "string",
+          "password": "string"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: "{{bearerToken}}"
+      prefix: ""
+    metaSortKey: 800
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f5663e4b66
     parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662043576430
+    modified: 1662129591900
     created: 1662043576430
     url: "{{ base_url }}/api/signup"
     name: /api/signup
@@ -27,7 +217,7 @@ resources:
       type: bearer
       token: "{{bearerToken}}"
       prefix: ""
-    metaSortKey: -1662043576430
+    metaSortKey: 900
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -36,38 +226,31 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
-  - _id: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    parentId: null
-    modified: 1662039501961
-    created: 1662039501961
-    name: openapi.yaml
-    description: ""
-    scope: design
-    _type: workspace
-  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f558aec441
+  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f562ecf488
     parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662043576429
-    created: 1662043576429
-    url: "{{ base_url }}/api/login"
-    name: /api/login
+    modified: 1662211672537
+    created: 1662129492083
+    url: "{{ base_url }}/api/tracker/{{ tracker_id }}/logs"
+    name: /api/tracker/{tracker_id}/logs
     description: ""
     method: POST
     body:
       mimeType: application/json
       text: |-
         {
-          "email": "string",
-          "password": "string"
+          "note": "string",
+          "value": "string"
         }
     parameters: []
     headers:
       - name: Content-Type
         value: application/json
+        id: pair_497ea44cc67f4665a5b74be260a9d9b4
     authentication:
       type: bearer
       token: "{{bearerToken}}"
       prefix: ""
-    metaSortKey: -1662043576429
+    metaSortKey: 1400
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -76,164 +259,10 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
-  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f52188a4e8
+  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f5fdf7cf0a
     parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662043576427
-    created: 1662043576427
-    url: "{{ base_url }}/api/tracker"
-    name: /api/tracker
-    description: ""
-    method: GET
-    body: {}
-    parameters: []
-    headers: []
-    authentication:
-      type: bearer
-      token: "{{bearerToken}}"
-      prefix: ""
-    metaSortKey: -1662043576427
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f50e04f629
-    parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662043576426
-    created: 1662043576426
-    url: "{{ base_url }}/api/tracker"
-    name: /api/tracker
-    description: ""
-    method: POST
-    body:
-      mimeType: application/json
-      text: |-
-        {
-          "name": "string",
-          "description": "string",
-          "type": "string",
-          "settings": [
-            "string"
-          ],
-          "choices": [
-            "string"
-          ]
-        }
-    parameters: []
-    headers:
-      - name: Content-Type
-        value: application/json
-    authentication:
-      type: bearer
-      token: "{{bearerToken}}"
-      prefix: ""
-    metaSortKey: -1662043576426
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f532d5f589
-    parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662043576424
-    created: 1662043576424
-    url: "{{ base_url }}/api/{{ username }}/{{ tracker_id }}"
-    name: /api/{username}/{tracker_id}
-    description: ""
-    method: GET
-    body: {}
-    parameters: []
-    headers: []
-    authentication:
-      type: bearer
-      token: "{{bearerToken}}"
-      prefix: ""
-    metaSortKey: -1662043576424
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f5116256fb
-    parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662043576423
-    created: 1662043576423
-    url: "{{ base_url }}/api/{{ username }}/{{ tracker_id }}"
-    name: /api/{username}/{tracker_id}
-    description: ""
-    method: DELETE
-    body: {}
-    parameters: []
-    headers: []
-    authentication:
-      type: bearer
-      token: "{{bearerToken}}"
-      prefix: ""
-    metaSortKey: -1662043576423
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f5d459bc4a
-    parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662043576422
-    created: 1662043576422
-    url: "{{ base_url }}/api/{{ username }}/{{ tracker_id }}"
-    name: /api/{username}/{tracker_id}
-    description: ""
-    method: PATCH
-    body:
-      mimeType: application/json
-      text: |-
-        {
-          "name": "string",
-          "description": "string",
-          "type": "string",
-          "settings": [
-            "string"
-          ],
-          "delete_choices": true,
-          "choices": [
-            {
-              "id": 0,
-              "new_name": "string"
-            }
-          ]
-        }
-    parameters: []
-    headers:
-      - name: Content-Type
-        value: application/json
-    authentication:
-      type: bearer
-      token: "{{bearerToken}}"
-      prefix: ""
-    metaSortKey: -1662043576422
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f50924fd79
-    parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662043576420
-    created: 1662043576420
+    modified: 1662129591901
+    created: 1662129492088
     url: "{{ base_url }}/api/tracker/{{ tracker_id }}/logs"
     name: /api/tracker/{tracker_id}/logs
     description: ""
@@ -245,7 +274,7 @@ resources:
       type: bearer
       token: "{{bearerToken}}"
       prefix: ""
-    metaSortKey: -1662043576420
+    metaSortKey: 1500
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -254,31 +283,31 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
-  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f5a7b39eb0
+  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f58008f0f6
     parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662043576418
-    created: 1662043576418
-    url: "{{ base_url }}/api/tracker/{{ tracker_id }}/logs"
-    name: /api/tracker/{tracker_id}/logs
+    modified: 1662211632693
+    created: 1662129492064
+    url: "{{ base_url }}/api/tracker/{{ tracker_id }}/logs/{{ log_id }}"
+    name: /api/tracker/{tracker_id}/logs/{log_id}
     description: ""
-    method: POST
+    method: PATCH
     body:
       mimeType: application/json
       text: |-
         {
-          "timestamp": "2022-09-01T14:46:16.406Z",
           "note": "string",
-          "value": null
+          "value": "string"
         }
     parameters: []
     headers:
       - name: Content-Type
         value: application/json
+        id: pair_7f5fad81acd941dbb293c54f2539601b
     authentication:
       type: bearer
       token: "{{bearerToken}}"
       prefix: ""
-    metaSortKey: -1662043576418
+    metaSortKey: 1900
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -287,34 +316,10 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
-  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f572f0b4c1
+  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f53cacaf41
     parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662043576416
-    created: 1662043576416
-    url: "{{ base_url }}/api/tracker/{{ tracker_id }}/logs/{{ log_id }}"
-    name: /api/tracker/{tracker_id}/logs/{log_id}
-    description: ""
-    method: GET
-    body: {}
-    parameters: []
-    headers: []
-    authentication:
-      type: bearer
-      token: "{{bearerToken}}"
-      prefix: ""
-    metaSortKey: -1662043576416
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f5f54b4866
-    parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662043576414
-    created: 1662043576414
+    modified: 1662129591901
+    created: 1662129492077
     url: "{{ base_url }}/api/tracker/{{ tracker_id }}/logs/{{ log_id }}"
     name: /api/tracker/{tracker_id}/logs/{log_id}
     description: ""
@@ -326,7 +331,7 @@ resources:
       type: bearer
       token: "{{bearerToken}}"
       prefix: ""
-    metaSortKey: -1662043576414
+    metaSortKey: 2000
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -335,45 +340,12 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
-  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f56c4c5a6b
+  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f5c69a7d6c
     parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662043576412
-    created: 1662043576412
+    modified: 1662129591902
+    created: 1662129492080
     url: "{{ base_url }}/api/tracker/{{ tracker_id }}/logs/{{ log_id }}"
     name: /api/tracker/{tracker_id}/logs/{log_id}
-    description: ""
-    method: PATCH
-    body:
-      mimeType: application/json
-      text: |-
-        {
-          "timestamp": "string",
-          "note": "string",
-          "value": null
-        }
-    parameters: []
-    headers:
-      - name: Content-Type
-        value: application/json
-    authentication:
-      type: bearer
-      token: "{{bearerToken}}"
-      prefix: ""
-    metaSortKey: -1662043576412
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f519388c34
-    parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662043576409
-    created: 1662043576409
-    url: "{{ base_url }}/api/tracker/{{ tracker_id }}/stats/{{ period }}"
-    name: /api/tracker/{tracker_id}/stats/{period}
     description: ""
     method: GET
     body: {}
@@ -383,7 +355,7 @@ resources:
       type: bearer
       token: "{{bearerToken}}"
       prefix: ""
-    metaSortKey: -1662043576409
+    metaSortKey: 2100
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -413,7 +385,7 @@ resources:
     _type: cookie_jar
   - _id: spc_1969d17b3a524056a3e193b4f4613032
     parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662129159070
+    modified: 1662211501189
     created: 1662039501964
     fileName: openapi.yaml
     contents: >-
@@ -452,7 +424,7 @@ resources:
                       required:
                         - msg
                     examples:
-                      example-1:
+                      Example 1:
                         value:
                           msg: Created
               '400':
@@ -468,13 +440,10 @@ resources:
                           minLength: 1
                       required:
                         - msg
-                      x-examples:
-                        example-1:
-                          msg: Created
                     examples:
-                      email_exists:
+                      Email/Username exists:
                         value:
-                          msg: Email Already Exists
+                          msg: Email/Username Already Exists
               '500':
                 description: Internal Server Error
             description: Sign up for New Users
@@ -488,6 +457,9 @@ resources:
                       name:
                         type: string
                         minLength: 1
+                      username:
+                        type: string
+                        minLength: 1
                       email:
                         type: string
                         minLength: 1
@@ -495,13 +467,13 @@ resources:
                         type: string
                         minLength: 1
                     required:
-                      - name
+                      - username
                       - email
                       - password
                   examples:
                     Example1:
                       value:
-                        name: John Doe
+                        username: JohnDoe
                         email: john@mail.com
                         password: password
         '/api/login':
@@ -524,11 +496,11 @@ resources:
                           type: string
                       required:
                         - access_token
-                        - name
+                        - username
                     examples:
-                      example-1:
+                      Example 1:
                         value:
-                          name: John Doe
+                          username: JohnDoe
                           access_token: some_string
               '400':
                 description: Bad Request
@@ -596,12 +568,12 @@ resources:
                         type: string
                         minLength: 1
                     required:
-                      - email
+                      - username
                       - password
                   examples:
                     Example1:
                       value:
-                        email: John@mail.com
+                        username: JohnDoe
                         password: password
         '/api/{username}/trackers':
           parameters:
