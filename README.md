@@ -28,6 +28,7 @@ The project is aimed at creating an app that allows multiple users to create tra
 ├── local_run.sh
 ├── local_setup.sh
 ├── madapp
+│   ├── api.py
 │   ├── controller.py
 │   ├── database.py
 │   ├── models.py
@@ -39,6 +40,7 @@ The project is aimed at creating an app that allows multiple users to create tra
 │       └── plotforapp.cpython-310.pyc
 ├── main.py
 ├── readme.md
+├── app_apis.yaml
 ├── static
 │   ├── login.jpg
 │   ├── minimalism1.gif
