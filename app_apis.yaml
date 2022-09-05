@@ -1,6 +1,6 @@
 _type: export
 __export_format: 4
-__export_date: 2022-09-03T13:28:38.629Z
+__export_date: 2022-09-05T15:49:34.128Z
 __export_source: insomnia.desktop.app:v2022.5.1
 resources:
   - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f563a58cc8
@@ -283,87 +283,6 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
-  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f58008f0f6
-    parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662211632693
-    created: 1662129492064
-    url: "{{ base_url }}/api/tracker/{{ tracker_id }}/logs/{{ log_id }}"
-    name: /api/tracker/{tracker_id}/logs/{log_id}
-    description: ""
-    method: PATCH
-    body:
-      mimeType: application/json
-      text: |-
-        {
-          "note": "string",
-          "value": "string"
-        }
-    parameters: []
-    headers:
-      - name: Content-Type
-        value: application/json
-        id: pair_7f5fad81acd941dbb293c54f2539601b
-    authentication:
-      type: bearer
-      token: "{{bearerToken}}"
-      prefix: ""
-    metaSortKey: 1900
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f53cacaf41
-    parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662129591901
-    created: 1662129492077
-    url: "{{ base_url }}/api/tracker/{{ tracker_id }}/logs/{{ log_id }}"
-    name: /api/tracker/{tracker_id}/logs/{log_id}
-    description: ""
-    method: DELETE
-    body: {}
-    parameters: []
-    headers: []
-    authentication:
-      type: bearer
-      token: "{{bearerToken}}"
-      prefix: ""
-    metaSortKey: 2000
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f5c69a7d6c
-    parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662129591902
-    created: 1662129492080
-    url: "{{ base_url }}/api/tracker/{{ tracker_id }}/logs/{{ log_id }}"
-    name: /api/tracker/{tracker_id}/logs/{log_id}
-    description: ""
-    method: GET
-    body: {}
-    parameters: []
-    headers: []
-    authentication:
-      type: bearer
-      token: "{{bearerToken}}"
-      prefix: ""
-    metaSortKey: 2100
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
   - _id: env_d8975b7e1ec00dbe2d4ec747b8d9643270c4ce86
     parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
     modified: 1662039501980
@@ -385,7 +304,7 @@ resources:
     _type: cookie_jar
   - _id: spc_1969d17b3a524056a3e193b4f4613032
     parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662211501189
+    modified: 1662392713840
     created: 1662039501964
     fileName: openapi.yaml
     contents: >-
@@ -468,14 +387,12 @@ resources:
                         minLength: 1
                     required:
                       - username
-                      - email
-                      - password
+                      - name
                   examples:
                     Example1:
                       value:
                         username: JohnDoe
-                        email: john@mail.com
-                        password: password
+                        name: John
         '/api/login':
           parameters: []
           post:
@@ -495,13 +412,12 @@ resources:
                         name:
                           type: string
                       required:
-                        - access_token
                         - username
+                        
                     examples:
                       Example 1:
                         value:
                           username: JohnDoe
-                          access_token: some_string
               '400':
                 description: Bad Request
                 content:
@@ -553,7 +469,6 @@ resources:
                       Internal Server Error:
                         value:
                           msg: Internal Server Error Occurred
-            description: Log in User and Get JWT Authentication Token
             requestBody:
               content:
                 application/json:
@@ -569,12 +484,10 @@ resources:
                         minLength: 1
                     required:
                       - username
-                      - password
                   examples:
                     Example1:
                       value:
                         username: JohnDoe
-                        password: password
         '/api/{username}/trackers':
           parameters:
             - schema:
@@ -637,10 +550,6 @@ resources:
                               - jkl
                               - lmno
                               - pqrstu
-              '401':
-                description: Unauthorized, Token has been expired/not been created.
-              '403':
-                description: Forbidden/Unauthorized Access
               '404':
                 description: No Trackers under Current User Found
                 content:
@@ -715,15 +624,9 @@ resources:
                       example-1:
                         value:
                           msg: Error Occurred
-              '401':
-                description: Unauthorized; Token has not been created/expired.
-              '403':
-                description: Forbidden; Unauthorized Access
               '500':
                 description: Internal Server Error
             description: Add a new tracker for the User
-            security:
-              - api_key_jwt: []
             requestBody:
               content:
                 application/json:
@@ -850,10 +753,6 @@ resources:
                           name: API Test 4
                           description: The description
                           type: time
-              '401':
-                description: Unauthorized; Token has not been created/expired.
-              '403':
-                description: Forbidden; Unauthorized access
               '404':
                 description: No tracker with the ID found
                 content:
@@ -888,9 +787,7 @@ resources:
                       example-1:
                         value:
                           msg: Internal server error occurred
-            description: Get information of a Tracker
-            security:
-              - api_key_jwt: []        
+            description: Get information of a Tracker      
           delete:
             summary: ''
             responses:
@@ -911,10 +808,6 @@ resources:
                       example-1:
                         value:
                           msg: Success
-              '401':
-                description: Unauthorized; Token has not been created/expired.
-              '403':
-                description: Forbidden; Unauthorized Access
               '404':
                 description: Tracker not Found on the Server
                 content:
@@ -934,9 +827,7 @@ resources:
                           msg: Not Found
               '500':
                 description: Internal Server Error
-            description: Delete Tracker by ID
-            security:
-              - api_key_jwt: []    
+            description: Delete Tracker by ID  
           patch:
             summary: ''
             responses:
@@ -974,10 +865,6 @@ resources:
                       example-1:
                         value:
                           msg: Error Occurred
-              '401':
-                description: Unauthorized; Token has not been created/expired.
-              '403':
-                description: Forbidden; Unauthorized access
               '404':
                 description: No Tracker Found
                 content:
@@ -1013,8 +900,6 @@ resources:
                         value:
                           msg: Error Occurred
             description: Update the Parameters of a Tracker
-            security:
-              - api_key_jwt: []
             requestBody:
               content:
                 application/json:
@@ -1141,10 +1026,6 @@ resources:
                             timestamp: '03/18/2022, 01:07:56 PM'
                             note: 'Note'
                             value: 'Yes'
-              '401':
-                description: Unauthorized; Token has not been created/expired.
-              '403':
-                description: Forbidden; Unauthorized Access
               '404':
                 description: No Logs Found
                 content:
@@ -1180,8 +1061,6 @@ resources:
                         value:
                           msg: Internal Error
             description: Logs of the given Tracker
-            security:
-              - api_key_jwt: []
           post:
             summary: ''
             responses:
@@ -1219,10 +1098,6 @@ resources:
                       example-1:
                         value:
                           msg: Error Occurred
-              '401':
-                description: Unauthorized; Token has not been created/expired.
-              '403':
-                description: Forbidden
               '404':
                 description: Not Found
                 content:
@@ -1258,8 +1133,6 @@ resources:
                         value:
                           msg: Internal Error
             description: Add a Log to the Tracker
-            security:
-              - api_key_jwt: []
             requestBody:
               content:
                 application/json:
