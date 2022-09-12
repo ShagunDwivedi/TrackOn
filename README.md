@@ -44,6 +44,7 @@ The project is aimed at creating an app that allows multiple users to create tra
 │       └── plotforapp.cpython-310.pyc
 ├── main.py
 ├── readme.md
+├── app_apis.yaml
 ├── static
 │   ├── login.jpg
 │   ├── minimalism1.gif
