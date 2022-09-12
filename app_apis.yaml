@@ -1,313 +1,3 @@
-_type: export
-__export_format: 4
-__export_date: 2022-09-05T15:49:34.128Z
-__export_source: insomnia.desktop.app:v2022.5.1
-resources:
-  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f563a58cc8
-    parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662211590644
-    created: 1662129492091
-    url: "{{ base_url }}/api/{{ username }}/{{ tracker_id }}"
-    name: /api/{username}/{tracker_id}
-    description: ""
-    method: PATCH
-    body:
-      mimeType: application/json
-      text: |-
-        {
-          "name": "string",
-          "description": "string",
-          "type": "string",
-          "settings": [
-            "string"
-          ]
-        }
-    parameters: []
-    headers:
-      - name: Content-Type
-        value: application/json
-        id: pair_3093f1f599e048518536d59d3a7e4a2b
-    authentication:
-      type: bearer
-      token: "{{bearerToken}}"
-      prefix: ""
-    metaSortKey: 300
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    parentId: null
-    modified: 1662039501961
-    created: 1662039501961
-    name: openapi.yaml
-    description: ""
-    scope: design
-    _type: workspace
-  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f521a21431
-    parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662129591900
-    created: 1662129492095
-    url: "{{ base_url }}/api/{{ username }}/{{ tracker_id }}"
-    name: /api/{username}/{tracker_id}
-    description: ""
-    method: DELETE
-    body: {}
-    parameters: []
-    headers: []
-    authentication:
-      type: bearer
-      token: "{{bearerToken}}"
-      prefix: ""
-    metaSortKey: 400
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f53522cb70
-    parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662129591900
-    created: 1662129492102
-    url: "{{ base_url }}/api/{{ username }}/{{ tracker_id }}"
-    name: /api/{username}/{tracker_id}
-    description: ""
-    method: GET
-    body: {}
-    parameters: []
-    headers: []
-    authentication:
-      type: bearer
-      token: "{{bearerToken}}"
-      prefix: ""
-    metaSortKey: 500
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f59c92d631
-    parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662211597823
-    created: 1662129492106
-    url: "{{ base_url }}/api/{{ username }}/trackers"
-    name: /api/{username}/trackers
-    description: ""
-    method: POST
-    body:
-      mimeType: application/json
-      text: |-
-        {
-          "name": "string",
-          "description": "string",
-          "type": "string",
-          "settings": [
-            "string"
-          ]
-        }
-    parameters: []
-    headers:
-      - name: Content-Type
-        value: application/json
-        id: pair_2e2b23d9f4b54108b7a6f9017d5e7fca
-    authentication:
-      type: bearer
-      token: "{{bearerToken}}"
-      prefix: ""
-    metaSortKey: 600
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f5bf9ef44b
-    parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662129625395
-    created: 1662129492111
-    url: "{{ base_url }}/api/{{ username }}/trackers"
-    name: /api/{username}/trackers
-    description: ""
-    method: GET
-    body: {}
-    parameters:
-      - id: pair_fa571ec0ae624916ba434d78541631b7
-        name: ""
-        value: ""
-        description: ""
-    headers: []
-    authentication:
-      type: bearer
-      token: "{{bearerToken}}"
-      prefix: ""
-    metaSortKey: 700
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f558aec441
-    parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662129591900
-    created: 1662043576429
-    url: "{{ base_url }}/api/login"
-    name: /api/login
-    description: ""
-    method: POST
-    body:
-      mimeType: application/json
-      text: |-
-        {
-          "email": "string",
-          "password": "string"
-        }
-    parameters: []
-    headers:
-      - name: Content-Type
-        value: application/json
-    authentication:
-      type: bearer
-      token: "{{bearerToken}}"
-      prefix: ""
-    metaSortKey: 800
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f5663e4b66
-    parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662129591900
-    created: 1662043576430
-    url: "{{ base_url }}/api/signup"
-    name: /api/signup
-    description: ""
-    method: POST
-    body:
-      mimeType: application/json
-      text: |-
-        {
-          "name": "string",
-          "email": "string",
-          "password": "string"
-        }
-    parameters: []
-    headers:
-      - name: Content-Type
-        value: application/json
-    authentication:
-      type: bearer
-      token: "{{bearerToken}}"
-      prefix: ""
-    metaSortKey: 900
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f562ecf488
-    parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662211672537
-    created: 1662129492083
-    url: "{{ base_url }}/api/tracker/{{ tracker_id }}/logs"
-    name: /api/tracker/{tracker_id}/logs
-    description: ""
-    method: POST
-    body:
-      mimeType: application/json
-      text: |-
-        {
-          "note": "string",
-          "value": "string"
-        }
-    parameters: []
-    headers:
-      - name: Content-Type
-        value: application/json
-        id: pair_497ea44cc67f4665a5b74be260a9d9b4
-    authentication:
-      type: bearer
-      token: "{{bearerToken}}"
-      prefix: ""
-    metaSortKey: 1400
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: req_wrk_cce78cfa58be4a6c8486c38c4b8884f5fdf7cf0a
-    parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662129591901
-    created: 1662129492088
-    url: "{{ base_url }}/api/tracker/{{ tracker_id }}/logs"
-    name: /api/tracker/{tracker_id}/logs
-    description: ""
-    method: GET
-    body: {}
-    parameters: []
-    headers: []
-    authentication:
-      type: bearer
-      token: "{{bearerToken}}"
-      prefix: ""
-    metaSortKey: 1500
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: env_d8975b7e1ec00dbe2d4ec747b8d9643270c4ce86
-    parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662039501980
-    created: 1662039501980
-    name: Base Environment
-    data:
-      base_url: "{{ scheme }}://{{ host }}{{ base_path }}"
-    dataPropertyOrder: null
-    color: null
-    isPrivate: false
-    metaSortKey: 1662039501980
-    _type: environment
-  - _id: jar_d8975b7e1ec00dbe2d4ec747b8d9643270c4ce86
-    parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662039501985
-    created: 1662039501985
-    name: Default Jar
-    cookies: []
-    _type: cookie_jar
-  - _id: spc_1969d17b3a524056a3e193b4f4613032
-    parentId: wrk_cce78cfa58be4a6c8486c38c4b8884f5
-    modified: 1662392713840
-    created: 1662039501964
-    fileName: openapi.yaml
-    contents: >-
       openapi: 3.0.3
 
       info:
@@ -388,11 +78,15 @@ resources:
                     required:
                       - username
                       - name
+                      - email
+                      - password
                   examples:
                     Example1:
                       value:
                         username: JohnDoe
-                        name: John
+                        name: John Doe
+                        email: john@mail.com
+                        password: password
         '/api/login':
           parameters: []
           post:
@@ -412,11 +106,12 @@ resources:
                         name:
                           type: string
                       required:
+                        - access_token
                         - username
-                        
                     examples:
                       Example 1:
                         value:
+                          access_token: some_string
                           username: JohnDoe
               '400':
                 description: Bad Request
@@ -469,6 +164,7 @@ resources:
                       Internal Server Error:
                         value:
                           msg: Internal Server Error Occurred
+            description: Log in User and Get Authentication Token
             requestBody:
               content:
                 application/json:
@@ -484,17 +180,19 @@ resources:
                         minLength: 1
                     required:
                       - username
+                      - password
                   examples:
                     Example1:
                       value:
                         username: JohnDoe
-        '/api/{username}/trackers':
-          parameters:
-            - schema:
-                type: string
-              name: username
-              in: path
-              required: true
+                        password: password
+        '/api/trackers':
+          #parameters:
+            #- schema:
+                #type: string
+              #name: username
+              #in: path
+              #required: true
           get:
             summary: ''
             tags: []
@@ -550,6 +248,10 @@ resources:
                               - jkl
                               - lmno
                               - pqrstu
+              '401':
+                description: Unauthorized; Token has been expired/not been created.
+              '403':
+                description: Forbidden/Unauthorized Access
               '404':
                 description: No Trackers under Current User Found
                 content:
@@ -624,9 +326,15 @@ resources:
                       example-1:
                         value:
                           msg: Error Occurred
+              '401':
+                description: Unauthorized; Token has not been created/expired.
+              '403':
+                description: Forbidden; Unauthorized Access
               '500':
                 description: Internal Server Error
             description: Add a new tracker for the User
+            security:
+              - api_key_jwt: []
             requestBody:
               content:
                 application/json:
@@ -643,7 +351,7 @@ resources:
                         minLength: 1
                         maxLength: 255
                       type:
-                        type: string
+                        type: integer
                         minLength: 1
                       settings:
                         type: array
@@ -658,7 +366,7 @@ resources:
                       value:
                         name: Test Tracker API
                         description: This was created using API
-                        type: multiplechoice
+                        type: 3
                         settings:
                           - s1
                           - s2
@@ -667,27 +375,22 @@ resources:
                       value:
                         name: Test Tracker API
                         description: This was created using API
-                        type: numeric
+                        type: 1
                     Boolean:
                       value:
                         name: Test Tracker API
                         description: This was created using API
-                        type: boolean
+                        type: 2
                     Time Duration:
                       value:
                         name: Test Tracker API
                         description: This was created using API
-                        type: timeduration                
-        '/api/{username}/{tracker_id}':
+                        type: 4                
+        '/api/tracker/{tracker_id}':
           parameters:
             - schema:
-                type: string
+                type: integer
               name: tracker_id
-              in: path
-              required: true
-            - schema:
-                type: string
-              name: username
               in: path
               required: true
           get:
@@ -753,6 +456,10 @@ resources:
                           name: API Test 4
                           description: The description
                           type: time
+              '401':
+                description: Unauthorized; Token has not been created/expired.
+              '403':
+                description: Forbidden; Unauthorized access
               '404':
                 description: No tracker with the ID found
                 content:
@@ -787,7 +494,9 @@ resources:
                       example-1:
                         value:
                           msg: Internal server error occurred
-            description: Get information of a Tracker      
+            description: Get information of a Tracker
+            security:
+              - api_key_jwt: []       
           delete:
             summary: ''
             responses:
@@ -808,6 +517,10 @@ resources:
                       example-1:
                         value:
                           msg: Success
+              '401':
+                description: Unauthorized; Token has not been created/expired.
+              '403':
+                description: Forbidden; Unauthorized Access
               '404':
                 description: Tracker not Found on the Server
                 content:
@@ -827,7 +540,9 @@ resources:
                           msg: Not Found
               '500':
                 description: Internal Server Error
-            description: Delete Tracker by ID  
+            description: Delete Tracker by ID
+            security:
+              - api_key_jwt: []
           patch:
             summary: ''
             responses:
@@ -865,6 +580,10 @@ resources:
                       example-1:
                         value:
                           msg: Error Occurred
+              '401':
+                description: Unauthorized; Token has not been created/expired.
+              '403':
+                description: Forbidden; Unauthorized access
               '404':
                 description: No Tracker Found
                 content:
@@ -900,6 +619,8 @@ resources:
                         value:
                           msg: Error Occurred
             description: Update the Parameters of a Tracker
+            security:
+              - api_key_jwt: []
             requestBody:
               content:
                 application/json:
@@ -953,7 +674,7 @@ resources:
         '/api/tracker/{tracker_id}/logs':
           parameters:
             - schema:
-                type: string
+                type: integer
               name: tracker_id
               in: path
               required: true
@@ -1026,8 +747,12 @@ resources:
                             timestamp: '03/18/2022, 01:07:56 PM'
                             note: 'Note'
                             value: 'Yes'
+              '401':
+                description: Unauthorized; Token has not been created/expired.
+              '403':
+                description: Forbidden; Unauthorized Access
               '404':
-                description: No Logs Found
+                description: Not Found
                 content:
                   application/json:
                     schema:
@@ -1061,6 +786,8 @@ resources:
                         value:
                           msg: Internal Error
             description: Logs of the given Tracker
+            security:
+              - api_key_jwt: []
           post:
             summary: ''
             responses:
@@ -1098,6 +825,10 @@ resources:
                       example-1:
                         value:
                           msg: Error Occurred
+              '401':
+                description: Unauthorized; Token has not been created/expired.
+              '403':
+                description: Forbidden
               '404':
                 description: Not Found
                 content:
@@ -1133,6 +864,8 @@ resources:
                         value:
                           msg: Internal Error
             description: Add a Log to the Tracker
+            security:
+              - api_key_jwt: []
             requestBody:
               content:
                 application/json:
@@ -1172,12 +905,12 @@ resources:
         '/api/tracker/{tracker_id}/logs/{log_id}':
           parameters:
             - schema:
-                type: string
+                type: integer
               name: tracker_id
               in: path
               required: true
             - schema:
-                type: string
+                type: integer
               name: log_id
               in: path
               required: true
@@ -1251,13 +984,10 @@ resources:
                           minLength: 1
                       required:
                         - msg
-                      x-examples:
-                        example-1:
-                          msg: not found
                     examples:
                       example-1:
                         value:
-                          msg: not found
+                          msg: Not Found
               '500':
                 description: Internal Server Error
                 content:
@@ -1271,13 +1001,10 @@ resources:
                           minLength: 1
                       required:
                         - msg
-                      x-examples:
-                        example-1:
-                          msg: error
                     examples:
                       example-1:
                         value:
-                          msg: error
+                          msg: Internal Server Error Occurred
             description: Details of Particular Log
             security:
               - api_key_jwt: []
@@ -1459,20 +1186,4 @@ resources:
             scheme: bearer
       security:
         - api_key_jwt: []
-    contentType: yaml
-    _type: api_spec
-  - _id: env_env_d8975b7e1ec00dbe2d4ec747b8d9643270c4ce86_sub
-    parentId: env_d8975b7e1ec00dbe2d4ec747b8d9643270c4ce86
-    modified: 1662043576432
-    created: 1662043576432
-    name: OpenAPI env
-    data:
-      scheme: http
-      base_path: ""
-      host: 127.0.0.1:5000
-      bearerToken: bearerToken
-    dataPropertyOrder: null
-    color: null
-    isPrivate: false
-    metaSortKey: 1662043576432
-    _type: environment
+    

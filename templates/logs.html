@@ -80,15 +80,15 @@ li a:hover {
 </head>
 <body>
 	<div class="headdiv">
-   		<h1><a href="/">TrackOn</a> <a href="/" style="float:right; font-size: 16px; margin-right: 8px; margin-top: 7px">LogOut</a></h1>
+   		<h1><a href="/">TrackOn</a> <a href="{{ url_for_security('logout') }}" style="float:right; font-size: 16px; margin-right: 8px; margin-top: 7px">LogOut</a></h1>
 	</div>
-	<a href="/{{userid}}/dashboard" style="margin-left: 5px">Back to Dashboard</a>
+	<a href="/dashboard" style="margin-left: 5px">Back to Dashboard</a>
 	<h1 style="margin-left: 5px">{{ tracker.trk_name }}</h1>
 	<h5 style="margin-left: 5px">Tracker Description: {{ tracker.description }}</h5>
 	{% if loglist|length !=0 %}
 		<img src="{{url_for('static', filename='plot.jpg')}}" style="margin-left: 15px" height=35% width=40%><br>
 	{% endif %}
-	<form action="/{{userid}}/{{tracker.trk_id}}/addlog" method="get">
+	<form action="/{{tracker.trk_id}}/addlog" method="get">
 		<input class="btn" type="submit" value="Add New Log">
    	</form>
 	<br>
@@ -106,8 +106,8 @@ li a:hover {
 		<li>&emsp;{{ logged.value }}&emsp;<li>
 		<li>&emsp;{{ logged.note }}&emsp;</li>
 		<div style="float:right;">
-			<li><a href="/{{ userid }}/{{ tracker.trk_id }}/{{ logged.time }}/updatelog">Update&emsp;</a></li>
-			<li style="float:right; border-right: none"><a href="/{{userid}}/{{ tracker.trk_id }}/{{ logged.time }}/deletelog">&emsp;Delete</a></li>
+			<li><a href="/{{ tracker.trk_id }}/{{ logged.log_id }}/updatelog">Update&emsp;</a></li>
+			<li style="float:right; border-right: none"><a href="/{{ tracker.trk_id }}/{{ logged.log_id }}/deletelog">&emsp;Delete</a></li>
 		</div>
 	</ul>
 	<br>

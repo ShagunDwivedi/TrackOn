@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body{
+  background-image: url(static/login.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+fieldset{
+  display: block;  
+  background-color:#653187;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: white;
+  border-style: none;
+}
+
+.btn{
+  width: 20%;
+  background-color: white;
+  cursor: pointer;
+  padding: 10px 16px;
+  border: none;
+}
+.btn:hover{
+  background-color: #ffbbb1;
+  color: white;
+}
+.trkname{
+    display: block;
+    padding-inline-start: 40px;
+    background-color: #653187;
+    width:100%;
+    overflow: hidden;
+    margin-top: 0px;
+    color: white;
+}
+a:link {
+  color: white;
+}
+a:visited {
+  color: white;
+}
+a:hover {
+  color: #ffbbb1;
+}
+a:active {
+  color: white;
+}
+</style>
+
+	<title>SignUp</title>
+</head>
+<body class="bg">
+	<div class="trkname">
+		<h1><a href="/">TrackOn</a></h1>
+	</div>
+	<br><br><br>
+	<form action="{{ url_for_security('register') }}" method="post" name="register_user_form">
+    {{ register_user_form.hidden_tag() }}
+    <input id="next" name="next" type="hidden" value="">
+<input id="csrf_token" name="csrf_token" type="hidden" value="ImY5NjFmMjg1YjcxMDMwZTEwOTJjYTdhNmYzZjVlY2M1ZDg5MDdjNTIi.YxNvLw.h0QUUsRopOyxq7Jm483op7CGKL0">
+		<fieldset>
+  			<h4>Enter Details</h4>
+  			<label for="id">Pick a Username</label><br>
+          {{ register_user_form.id(placeholder="id") }}<br><br>
+        <label for="name">Enter Your Name</label><br>
+          {{ register_user_form.name(placeholder="name") }}<br>
+        <label for="email">Email Address</label><br>
+          {{ register_user_form.email(placeholder="email", type="email") }}<br><br>
+        <label for="password">Password</label> <br>
+        {{ register_user_form.password(placeholder="password", type="password") }}<br>
+        {% if register_user_form.password_confirm %}
+          {{ register_user_form.password_confirm }}
+        {% endif %}
+        <br><br>
+        {% from 'security/_formhelpers.html' import render_field %}
+        {{ render_field(register_user_form.submit, class="btn") }}
+  			<!---<input class="btn" id="submit" name="submit" type="submit" value="Register"><br><br>-->
+ 		</fieldset>
+	</form>
+
+</body>
+</html>
+

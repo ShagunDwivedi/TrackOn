@@ -90,13 +90,13 @@ fieldset{
 </head>
 <body>
 	<div class="trkname">
-   		<h1><a href="/">TrackOn</a> <a href="/" style="float:right; font-size: 16px; margin-right: 8px; margin-top: 7px">LogOut</a></h1>
+   		<h1><a href="/">TrackOn</a> <a href="{{ url_for_security('logout') }}" style="float:right; font-size: 16px; margin-right: 8px; margin-top: 7px">LogOut</a></h1>
 	</div>
 	<br><br><br>
 	<div>
 		<fieldset>
-		<h4>Add New Log</h4>
-		<form action="/{{ userid }}/{{ track.trk_id }}/addlog" method="post">
+		<h4>Add New Log </h4>
+		<form action="/{{ track.trk_id }}/addlog" method="post">
 
 		{% if track.trk_type==1 %}
 			<! –– tracker name ––>
@@ -107,7 +107,7 @@ fieldset{
 			<label> Enter Value:</label></br>
   				<input type="radio" id="true" name="value" value="Yes">
   			<label for="Yes">Yes</label><br>
-  				<input type="radio" id="false" name="value" value="No"))">
+  				<input type="radio" id="false" name="value" value="No"))>
   			<label for="No">No</label><br>
 
 		{% elif track.trk_type==4 %}
@@ -122,19 +122,18 @@ fieldset{
 				{% for x in values %}
 					<option value="{{ x.value }}">{{ x.value }}</option>
 				{% endfor %}
-          <option value="Other">Other</option>
-          <textarea name="other" rows="2" cols="30">If chosen other.</textarea>
 				</select>
 			<br><br>
 		{% endif %}
 		<! –– option(for multi-valued tracker) ––>
 		<label for="settings">Note:</label><br>
-		<textarea name="message" rows="2" cols="30"></textarea>
+		<textarea name="message" rows="2" cols="30">
+		</textarea>
 		<br>
 
 		<input class="btn" type="submit" value="Add"><br><br>
 	</form>
-	<br><a href="/{{ userid }}/{{ track.trk_id }}"> Back to Logs</a>
+	<br><a href="/{{ track.trk_id }}"> Back to Logs</a>
 	</fieldset>
 	</div>
 </body>

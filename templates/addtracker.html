@@ -90,13 +90,13 @@ fieldset{
 </head>
 <body>
 	<div class="trkname">
-   		<h1><a href="/">TrackOn</a> <a href="/" style="float:right; font-size: 16px; margin-right: 8px; margin-top: 7px">LogOut</a></h1>
+   		<h1><a href="/">TrackOn</a> <a href="{{ url_for_security('logout') }}" style="float:right; font-size: 16px; margin-right: 8px; margin-top: 7px">LogOut</a></h1>
 	</div>
 	<br><br><br>
 	<div>
 		<fieldset>
 		<h4>Enter New Tracker Details</h4>
-		<form action="/{{ userid }}/addtracker" method="post">
+		<form action="/addtracker" method="post">
 			<! –– tracker name ––>
 			<label for="trak_name">Enter Tracker Name:</label><br>
 				<input type="text" id="trakname" name="trakname"><br><br>
@@ -114,13 +114,14 @@ fieldset{
 			<br><br>
 			<! –– option(for multi-valued tracker) ––>
 			<label for="settings">If Multiple-Choice Tracker, Enter values separated by commas(,)</label><br>
-				<textarea name="settings" rows="2" cols="30"></textarea><br>
+				<textarea name="settings" rows="2" cols="30">
+				</textarea><br>
 
 			<br>
 		<input class="btn" type="submit" value="Create"><br><br>
 		</form>
 
-		<br><a href="/{{ userid }}/dashboard"> Back to Dashboard</a>
+		<br><a href="/dashboard"> Back to Dashboard</a>
 		</fieldset>
 	</div>
 </body>

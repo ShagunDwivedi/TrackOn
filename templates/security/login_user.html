@@ -4,7 +4,7 @@
 <style>
 
 body{
-  background-image: url(static/login.jpg);
+  background-image: url("static/login.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
@@ -14,10 +14,10 @@ body{
   margin-right: 0px;
 }
 
-.fieldset{
+fieldset{
   display: block;  
   background-color:#653187;
-  width: 52%;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -40,6 +40,7 @@ body{
     display: block;
     padding-inline-start: 40px;
     background-color: #653187;
+    width:100%;
     overflow: hidden;
     margin-top: 0px;
     color: white;
@@ -58,25 +59,25 @@ a:active {
 }
 </style>
 
-	<title>TrackOn</title>
+	<title>LogIn</title>
 </head>
-
 <body class="bg">
 	<div class="trkname">
-   		<h1><a href="/">TrackOn</a></h1>
+		<h1><a href="/">TrackOn</a></h1>
 	</div>
 	<br><br><br>
-	<div class="fieldset">
-		<br><h3>Track your Activities!</h3>
-		<h4>New Here? Create an Account!</h4>
-   		<form action="{{ url_for_security('register') }}" method="get">
-			<input class="btn" type="submit" value="Sign Up">
-   		</form><br>
-		<h4>Already Using?</h4>
-   		<form action="/login" method="get">
-			<input class="btn" type="submit" value="Log In">
-   		</form>
-	<br><br><br>
-	</div>
+	<form action="{{ url_for_security('login') }}" method="POST" name="login_user_form">
+		<fieldset>
+      {{ login_user_form.hidden_tag() }}
+		<h4>Login</h4>
+		<label for="email">Email Address</label><br>
+    <input id="email" name="email" required type="text" value="">
+		<br><br>
+    <label for="password">Password</label><br>
+    <input id="password" name="password" required type="password" value="">
+    <br><br>
+    <input id="submit" name="submit" type="submit" value="Login" class="btn"><br><br>
+		</fieldset>
+	</form>
 </body>
 </html>
